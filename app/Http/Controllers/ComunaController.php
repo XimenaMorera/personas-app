@@ -29,7 +29,10 @@ class ComunaController extends Controller
      */
     public function create()
     {
-        //
+        $municipios= DB:: table('tb_municipio')
+        ->orderBy('muni_nomb')
+        ->get();
+        return view('comuna.new',['municipios'=>$municipios]);
     }
 
     /**
