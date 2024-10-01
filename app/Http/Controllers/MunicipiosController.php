@@ -15,12 +15,15 @@ class MunicipiosController extends Controller
      */
     public function index()
     {
-         //$municipios = Municipio::all();
-         $municipios = DB::table('tb_municipio')
-         ->join('tb_departamento', 'tb_municipio.depa_codi', '=' , 'tb_departamento.depa_codi')
-         ->select('tb_municipio.*' , "tb_departamento.depa_nomb")
-         ->get();
-      return view('municipio.index', ['municipios' => $municipios]);
+        // $municipios = Municipio::all();
+        $municipio = DB::table('tb_municipio')
+            ->join('tb_departamento', 'tb_municipio.depa_codi', '=', 'tb_departamento.depa_codi')
+            ->select('tb_municipio.*', 'tb_departamento.depa_nomb')
+            ->get();
+
+        // dd($municipios);
+
+        return view('municipio.index', ['municipios' => $municipio]);
     }
 
     /**
