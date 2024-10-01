@@ -31,7 +31,10 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        //
+        $paises = DB::table('tb_pais')
+        ->orderBy('pais_nomb')
+        ->get();
+    return view('departamento.new', ['paises' => $paises]);
     }
 
     /**
