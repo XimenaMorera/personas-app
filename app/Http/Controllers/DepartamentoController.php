@@ -13,7 +13,15 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        //
+        // $departamentos = departamento::all();
+        $departamento = DB::table('tb_departamento')
+            ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
+            ->select('tb_departamento.*', 'tb_pais.pais_nomb')
+            ->get();
+
+        // dd($departamentos);
+
+        return view('departamento.index', ['departamentos' => $departamento]);
     }
 
     /**
