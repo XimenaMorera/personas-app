@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ComunaController;
 use App\Http\Controllers\MunicipiosController;
+use App\Http\Controllers\DepartamentoController;
 use Illuminate\Support\Facades\Route;
 
 /*
