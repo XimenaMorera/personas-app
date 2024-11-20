@@ -60,7 +60,7 @@ class ComunaController extends Controller
         $municipios = DB::table('tb_municipio')
             ->orderBy('muni_nomb')
             ->get();
-        return response()->json(['comunas' => $comuna, 'municipios' => $municipios], 200, [], JSON_PRETTY_PRINT);
+        return json_encode(['comunas' => $comuna, 'municipios' => $municipios]);
     }
 
     /**
