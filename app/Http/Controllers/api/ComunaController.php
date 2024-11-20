@@ -56,9 +56,7 @@ class ComunaController extends Controller
     public function show(string $id)
     {
         $comuna = Comuna::find($id);
-        if (is_null($comuna)) {
-            return abort(404);
-        }
+   
         $municipios = DB::table('tb_municipio')
             ->orderBy('muni_nomb')
             ->get();
